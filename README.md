@@ -19,7 +19,7 @@ After the collection, the following formatted data recovery tools are employed.
 
 Foremost is a console software whose objective is to recover data formatted through Data Carving, considering the headers, footers and file structures, being able to work with image files or directly in a given unit.
 
--	t: specifies the type of files to be recovered, 
+-	\-t: specifies the type of files to be recovered, 
 for example,  JPEG, gif, png, bmp, 
 or you can use all to recover all types of files.
 -	  -i: abbreviation for input, for the source partition.
