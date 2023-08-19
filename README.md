@@ -19,7 +19,7 @@ After the collection, the following formatted data recovery tools are employed.
 
 Foremost is a console software whose objective is to recover data formatted through Data Carving, considering the headers, footers and file structures, being able to work with image files or directly in a given unit.
 
--	  -	t: specifies the type of files to be recovered, 
+-	t: specifies the type of files to be recovered, 
 for example,  JPEG, gif, png, bmp, 
 or you can use all to recover all types of files.
 -	  -i: abbreviation for input, for the source partition.
@@ -28,7 +28,7 @@ or you can use all to recover all types of files.
 In the console, we use Foremost:
 -	  foremost -t all -i image.dd
 
-\subsubsection{Scalpel}
+## Scalpel
 
 By default, all types of files are contained in the standard configuration file (systems/etc/scalpel/scalpel.conf files). \linebreak
 This file contains comments that correspond to the configuration pattern. To specify which are the types of files to be extracted, it is necessary to uncomment the lines referring to the extensions of the files.
@@ -48,7 +48,7 @@ At the console, we use Scalpel:
 
 \end{itemize}
 
-\subsubsection{Magic Rescue}
+## Magic Rescue
 Magic Rescue also employs Data Carving to recover formatted data. By default, all types of files to be recovered are contained in:
 (files systems/usr/share/magicrescue/recipes)
 
@@ -72,52 +72,23 @@ In the console, use Magic Rescue:
 \end{verbatim}
 \end{itemize}
 
-\subsubsection{Photorec}
+## Photorec
 
 PhotoRec is an open source application. It has the function of recovering data that cannot be opened, and can be used on mobile devices such as pendrive, CDs and HDs.
 
-\subsubsection{Recuva}
+## Recuva
 
 Recuva allows you to recover files that have been deleted on Windows system. This recovery is not restricted to the hard disk, it also makes it possible to rescue files saved on portable devices. Its main function is to locate files that can be recovered. However, the program also allows a complete deletion of files.
 
-\subsubsection{Autopsy}
+## Autopsy
 
 Autopsy makes it possible to recover deleted data.
 Autopsy makes it possible to recover deleted data. With this tool, you cannot directly access the drive or image to perform Data Carving. You must follow the process of creating the case, building the preview file, the result files, analyzing the results, performing integrity checks, and extracting the data.
 
 
-\subsubsection{Authorial Tool}
+## DECA
 
-The author's tool employs machine learning aimed at cluster pattern recognition in JPEG files. Specifically, the Support Vector Machine is employed. 
-In the feature extraction step, the authoring tool creates the histogram of the\ textit{cluster} evaluated. As early as the classification step, the histogram of the \textit{cluster} serves as input attributes for the statistical learning machine.
-
-\added %{Em ambas as extrações de características, apenas as amostras estatisticamente distintas entre si são levadas em consideração de modo a compor o repositório de aprendizado estatístico.
-%Na referida tarefa, a comparação se dá entre todas as amostras. Aos pares, as amostras são submetidas ao teste paramétrico \textit{t-students} e ao teste não-paramétrico
-
-\textit{Wilcoxon}.
-
-%A hipótese nula deve ser rejeitada em ambos os testes. Nessa situação, a amostra em avaliação é acrescentada ao repositório.}
-
-\added{
-%Ao final do processo, são consideradas 65 e 152 amostras pertencentes à classe (JPEG) e à contra-classe (PNG), respectivamente, na primeira metodologia de extração de características. Na referida metodologia, o \textit{cluster} em si serve como atributo de entrada. 
-%Também são consideradas 9 e 10 amostras à classe (JPEG) e à contra-classe (PNG), respectivamente, na segunda metodologia de extração de características. Nela, é realizado o histograma do \textit{cluster} seguindo a metodologia de Pavel, o DECA \cite{gladyshev2017decision}. 
-%De modo a balancear a classe e a contra-classe, a quantidade das amostras são niveladas pelo menor número.
-}
-
-\added{
-%Durante a fase de aprendizado, devem ser estudados distintos \textit{kernels} de modo a otimizar a fronteira de decisão entra a classe e a contra-classe da machine learning. 
-%Uma boa capacidade de generalização da \textit{machine learning}  também depende de uma escolha ajustada dos parâmetros $(C, \gamma)$. Não existe um método universal no sentido de escolher os parâmetros $(C, \gamma)$. No presente trabalho, os parâmetros $C$ e $\gamma$ variam exponencialmente em sequências crescentes, matematicamente de acordo com a função $2^n$, onde $n=\left \{0, 5, 10 \right \}$. 
-%A hipótese é experimentar os referidos parâmetros de forma distinta dos padrões; $(C, \gamma) = (2^{0}, 2^{0})$.
-% expectativa é gerar melhores acurácias em relação à ferramenta DECA proposta por \citeonline{gladyshev2017decision}.
-}
-
-\added{
-%Ao final dos experimentos, foram gerados dezenas de execuções cada qual contendo distintos parâmetros de configuração da machine learning.
-%Na melhor configuração, o \textit{kernel} é o polynomial dotado dos parâmetros $(C, \gamma) = (2^{0}, 2^{0})$. Quanto à extração de características, o \textit{cluster} em si serve como atributo de entrada dos classificadores em detrimento do histograma do \textit{cluster}.
-}
-
-
-The authorial tool employs the libraries:
+DECA employs the libraries:
 
 
 \begin{itemize}
