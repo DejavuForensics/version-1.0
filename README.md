@@ -36,10 +36,9 @@ This file contains comments that correspond to the configuration pattern. To spe
 -	The source partition. Note that there is no -i directive even though the Scalpel documentation states that it is required.
 -	-o: short for output, for the destination path of the files to be retrieved. It is folder must first be created before Scalpel is invoked.
 -	-c: configuration file discussed earlier.
--	
+	
 At the console, we use Scalpel:
-    scalpel image.dd -o /output2/ 
-    -c /etc/scalpel/scalpel.conf
+-	  scalpel image.dd -o /output2/ -c /etc/scalpel/scalpel.conf
 
 
 ## Magic Rescue
