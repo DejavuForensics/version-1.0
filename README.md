@@ -53,7 +53,7 @@ It is necessary that the folder is created before Magic Rescue is invoked.
 -	There is no flag(directive) for the source partition, just quote it in the command.
 -	-r: configuration files discussed earlier.
 -	
-In the console, use Magic Rescue:
+In the console, we use Magic Rescue:
 ```
 magicrescue -d output3 image.dd  -r avi -r canon-cr2 -r elf -r flac  -r gpl -r gzip -r jpeg-exif -r jpeg-jfif  -r mbox -r mbox-mozilla-inbox  -r mbox-mozilla-sent -r mp3-id3v1 -r mp3-id3v2 -r msoffice -r nikon-raw -r perl -r png -r ppm -r sqlite -r zip
 ```
@@ -88,22 +88,14 @@ There is pattern recognition of JPEG files through machine learning.
 In this sense, Support Vector Machine (SVM) corresponds to one of the Machine Learning methods that is very important in recognizing patterns in a complex data set.
 
 The DECA tool employs the following parameters:
-\begin{itemize}
-	\item 
--vv: abbreviation for \textit{verbose} in order to print on the screen the progress of the expertise.
-	\item 
--o:  short for output, for the destination path of the files to be retrieved (on another partition such as an auxiliary memory device). It is necessary that the
+-	-vv: abbreviation for \textit{verbose} in order to print on the screen the progress of the expertise.
+-	-o:  short for output, for the destination path of the files to be retrieved (on another partition such as an auxiliary memory device). It is necessary that the
 folder must be created before the authoring tool is invoked.
-    \item
-There is no flag (directive) for the source partition, just quote it in the command.
-	\item 
---deca: with machine learning added to the \textit{Data Carving}. 
-	\item 
--m  jpeg.model: file containing the configuration parameters of the machine learning.
-\item 
-In the console, we use:
-\begin{verbatim}
-    ./deca -vv -o /home/kali/Desktop/output 
-    --deca -m jpeg.model image.dd
-\end{verbatim}
-\end{itemize}
+-	There is no flag (directive) for the source partition, just quote it in the command.
+-	--deca: with machine learning added to the \textit{Data Carving}. 
+-	-m  jpeg.model: file containing the configuration parameters of the machine learning.
+
+In the console, we use DECA:
+```
+    ./deca -vv -o /home/kali/Desktop/output --deca -m jpeg.model image.dd
+```
