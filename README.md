@@ -33,20 +33,14 @@ In the console, we use Foremost:
 By default, all types of files are contained in the standard configuration file (systems/etc/scalpel/scalpel.conf files). \linebreak
 This file contains comments that correspond to the configuration pattern. To specify which are the types of files to be extracted, it is necessary to uncomment the lines referring to the extensions of the files.
 
-\begin{itemize}
-	\item[\textcolor{ocre}{\textbullet}] 
-The source partition. Note that there is no -i directive even though the Scalpel documentation states that it is required.
-	\item[\textcolor{ocre}{\textbullet}] 
--o: short for output, for the destination path of the files to be retrieved. It is folder must first be created before Scalpel is invoked.
-	\item[\textcolor{ocre}{\textbullet}] 
--c: configuration file discussed earlier.
+-	The source partition. Note that there is no -i directive even though the Scalpel documentation states that it is required.
+-	-o: short for output, for the destination path of the files to be retrieved. It is folder must first be created before Scalpel is invoked.
+-	-c: configuration file discussed earlier.
+-	
 At the console, we use Scalpel:
-\begin{verbatim}
     scalpel image.dd -o /output2/ 
     -c /etc/scalpel/scalpel.conf
-\end{verbatim}
 
-\end{itemize}
 
 ## Magic Rescue
 Magic Rescue also employs Data Carving to recover formatted data. By default, all types of files to be recovered are contained in:
