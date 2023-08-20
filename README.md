@@ -40,32 +40,23 @@ This file contains comments that correspond to the configuration pattern. To spe
 -	-c: configuration file discussed earlier.
 	
 At the console, we use Scalpel:
--	  scalpel image.dd -o /output2/ -c /etc/scalpel/scalpel.conf
-
+```
+scalpel image.dd -o /output2/ -c /etc/scalpel/scalpel.conf
+```
 
 ## Magic Rescue
 Magic Rescue also employs Data Carving to recover formatted data. By default, all types of files to be recovered are contained in:
 (files systems/usr/share/magicrescue/recipes)
 
-\begin{itemize}
-	\item
--d: to the destination path of the files to be recovered.
+-	-d: to the destination path of the files to be recovered.
 It is necessary that the folder is created before Magic Rescue is invoked.
-	\item
-There is no flag(directive) for the source partition, just quote it in the command.
-	\item
--r: configuration files discussed earlier.
+-	There is no flag(directive) for the source partition, just quote it in the command.
+-	-r: configuration files discussed earlier.
+-	
 In the console, use Magic Rescue:
-\begin{verbatim}
-    magicrescue -d output3 image.dd  -r avi 
-    -r canon-cr2 -r elf -r flac  -r gpl -r gzip 
-    -r jpeg-exif -r jpeg-jfif  -r mbox 
-    -r mbox-mozilla-inbox  -r mbox-mozilla-sent 
-    -r mp3-id3v1 -r mp3-id3v2 -r msoffice 
-    -r nikon-raw -r perl -r png -r ppm 
-    -r sqlite -r zip
-\end{verbatim}
-\end{itemize}
+```
+magicrescue -d output3 image.dd  -r avi -r canon-cr2 -r elf -r flac  -r gpl -r gzip -r jpeg-exif -r jpeg-jfif  -r mbox -r mbox-mozilla-inbox  -r mbox-mozilla-sent -r mp3-id3v1 -r mp3-id3v2 -r msoffice -r nikon-raw -r perl -r png -r ppm -r sqlite -r zip
+```
 
 ## Photorec
 
@@ -85,31 +76,18 @@ Autopsy makes it possible to recover deleted data. With this tool, you cannot di
 
 DECA employs the libraries:
 
+-	libtsk-dev (sleuthkit): responsible for reading clusters from the target storage device.
+-	libmagic-dev: Data Carving manager (magic numbers).
+-	liblinear-dev: responsible for the pattern recognition step using linear discriminant.
+-	libsvm-dev: responsible for the pattern recognition step through Support Vector Machine.
 
-\begin{itemize}
-
-\item 
-libtsk-dev (sleuthkit): responsible for reading clusters from the target storage device.
-
-\item
-libmagic-dev: Data Carving manager (magic numbers).
-
-\item
-liblinear-dev: responsible for the pattern recognition step using linear discriminant.
-
-\item
-libsvm-dev: responsible for the pattern recognition step through Support Vector Machine.
-\end{itemize}
-
-The framework used as a basis is DECA, whose name stands for Decision Theory Sculpture \cite{gladyshev2017decision}. DECA employs corresponds to a Data Carving algorithm that combines magic numbers and cluster pattern recognition based on machine learning.
+The framework used as a basis is DECA, whose name stands for Decision Theory Sculpture. DECA employs corresponds to a Data Carving algorithm that combines magic numbers and cluster pattern recognition based on machine learning.
 DECA is designed for fast recovery of unfragmented JPEG data. The process involves checking for the presence of JPEG data in clusters that are identified by reading the header and footer signatures. 
 Based on DECA, the authoring algorithm goes beyond magic numbers. The authoring approach has a specific feature that concerns the identification of headers and footers. 
 There is pattern recognition of JPEG files through machine learning.
-In this sense, Support Vector Machine (SVM) corresponds to one of the Machine Learning methods that is very important in recognizing patterns in a complex data set \added{[14]}.
+In this sense, Support Vector Machine (SVM) corresponds to one of the Machine Learning methods that is very important in recognizing patterns in a complex data set.
 
-Introduced through the statistical theory of learning by Vapnik \cite{vapnik1999nature}. This classification is based on the principle of optimal separation between classes, the goal of SVM is to classify a data set by creating an optimal decision surface known as a hyperplane. This decision surface tends to optimize the classification accuracy over the training set by providing the best margins relative to the support vectors \cite{chang2011libsvm}. The expectation is that the best hyperplane will have a higher generalization ability when joined to the test set.
-
-The authoring tool employs the following parameters:
+The DECA tool employs the following parameters:
 \begin{itemize}
 	\item 
 -vv: abbreviation for \textit{verbose} in order to print on the screen the progress of the expertise.
