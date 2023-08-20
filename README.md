@@ -26,7 +26,9 @@ or you can use all to recover all types of files.
 -	-o: short for output, for the destination path of the files to be retrieved (on another partition such as an auxiliary memory device). By default foremost creates a folder named output, if the user does not define the destination.
 
 In the console, we use Foremost:
--	  foremost -t all -i image.dd
+```
+foremost -t all -i image.dd
+```
 
 ## Scalpel
 
