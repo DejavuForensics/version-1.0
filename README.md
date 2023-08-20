@@ -22,8 +22,8 @@ Foremost is a console software whose objective is to recover data formatted thro
 -	-t: specifies the type of files to be recovered, 
 for example,  JPEG, gif, png, bmp, 
 or you can use all to recover all types of files.
--	  -i: abbreviation for input, for the source partition.
--	 -o: short for output, for the destination path of the files to be retrieved (on another partition such as an auxiliary memory device). By default foremost creates a folder named output, if the user does not define the destination.
+-	-i: abbreviation for input, for the source partition.
+-	-o: short for output, for the destination path of the files to be retrieved (on another partition such as an auxiliary memory device). By default foremost creates a folder named output, if the user does not define the destination.
 
 In the console, we use Foremost:
 -	  foremost -t all -i image.dd
