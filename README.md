@@ -97,5 +97,28 @@ folder must be created before the authoring tool is invoked.
 
 In the console, we use DECA:
 ```
-    ./deca -vv -o /home/kali/Desktop/output --deca -m jpeg.model image.dd
+./deca -vv -o /home/kali/Desktop/output --deca -m jpeg.model image.dd
 ```
+
+## Dejavu Forensics
+
+Dejavu Forensics employs the libraries:
+
+-	libtsk-dev (sleuthkit): responsible for reading clusters from the target storage device.
+-	libmagic-dev: Data Carving manager (magic numbers).
+-	liblinear-dev: responsible for the pattern recognition step using linear discriminant.
+-	libsvm-dev: responsible for the pattern recognition step through Support Vector Machine.
+
+ Dejavu Forensics utiliza os seguintes parâmetro:
+
+-	-vv: Essa opção é a abreviação de \textit{verbose}, utilizada para imprimir na tela o progresso da especialização.
+-	-o: Essa opção é a abreviação de \textit{output}, indicando o caminho de destino dos arquivos a serem recuperados. A pasta de destino deve ser criada antes de executar o comando.
+-	-oneclass: Essa opção especifica que a análise será conduzida em um único modo, ou seja, em uma classe de arquivo.
+-	-fex "raw": Essa opção indica que o método de extração de características utilizado é o \textit{raw}, que se refere à extração direta dos dados brutos dos arquivos. Também poderia ter sido escolha a opção \textit{histo} quanto os atributos de entrada dizem respeito ao histograma do \textit{cluster}.  
+-	dev/sdb1: Esse é o dispositivo ou partição a ser analisado, neste caso, image.dd.
+
+Uso do Dejavu quanto à recuperação de arquivos PNG
+```
+./dejavu -vv -o /home/kali/Desktop/Dejavu/out -oneclass -fex "raw" img.dd
+```
+
