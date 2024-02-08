@@ -109,15 +109,15 @@ Dejavu Forensics employs the libraries:
 -	liblinear-dev: responsible for the pattern recognition step using linear discriminant.
 -	libsvm-dev: responsible for the pattern recognition step through Support Vector Machine.
 
- Dejavu Forensics utiliza os seguintes parâmetro:
+Dejavu Forensics utilizes the following parameters:
 
--	-vv: Essa opção é a abreviação de \textit{verbose}, utilizada para imprimir na tela o progresso da especialização.
--	-o: Essa opção é a abreviação de \textit{output}, indicando o caminho de destino dos arquivos a serem recuperados. A pasta de destino deve ser criada antes de executar o comando.
--	-oneclass: Essa opção especifica que a análise será conduzida em um único modo, ou seja, em uma classe de arquivo.
--	-fex "raw": Essa opção indica que o método de extração de características utilizado é o \textit{raw}, que se refere à extração direta dos dados brutos dos arquivos. Também poderia ter sido escolha a opção \textit{histo} quanto os atributos de entrada dizem respeito ao histograma do \textit{cluster}.  
--	dev/sdb1: Esse é o dispositivo ou partição a ser analisado, neste caso, image.dd.
+- `-vv`: This option is an abbreviation for "verbose," used to print the progress of the specialization on the screen.
+- `-o`: This option is an abbreviation for "output," indicating the destination path for the recovered files. The destination folder must be created before executing the command.
+- `-oneclass`: This option specifies that the analysis will be conducted in a single mode, i.e., in a file class.
+- `-fex "raw"`: This option indicates that the feature extraction method used is "raw," referring to the direct extraction of raw data from the files. Alternatively, the option could have been chosen as "histo" when the input attributes relate to the cluster histogram.
+- `dev/sdb1`: This is the device or partition to be analyzed, in this case, image.dd.
 
-Uso do Dejavu quanto à recuperação de arquivos PNG
+Using Dejavu for the recovery of PNG files.
 ```
 ./dejavu -vv -o /home/kali/Desktop/Dejavu/out -oneclass -fex "raw" img.dd
 ```
