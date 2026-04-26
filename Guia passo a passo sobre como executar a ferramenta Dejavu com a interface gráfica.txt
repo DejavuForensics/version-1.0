@@ -1,0 +1,78 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Preparação:
+
+Para a implementação do Dejavu Forensics, foram utilizadas várias bibliotecas de software essenciais, cada uma desempenhando um papel fundamental no processo de recuperação de dados:
+
+- libtsk-dev (Sleuth Kit): Fornece funcionalidades para a leitura de clusters de dispositivos de armazenamento, essencial para a análise forense de sistemas de arquivos.
+- libmagic-dev: Gerencia a identificação de tipos de arquivo por meio de números mágicos, permitindo a classificação e recuperação de dados.
+- liblinear-dev: Utilizada para reconhecimento de padrões através de discriminante linear, otimizando a precisão da recuperação de arquivos.
+- libsvm-dev: Aplica a técnica de Máquina de Vetores de Suporte (SVM) para o reconhecimento de padrões complexos, aprimorando a detecção de imagens.
+
+Para instalar as dependências no Kali Linux, execute o seguinte comando no terminal:
+
+
+        sudo apt-get install libtsk-dev libmagic-dev liblinear-dev libsvm-dev
+
+Instalação do Python:
+
+Se o Python não estiver instalado em seu sistema Linux você pode seguir estas etapas para instalar o Python e o Pillow (que é a biblioteca necessária para lidar com imagens no Python) usando o gerenciador de pacotes apt e o pip:
+
+Instalação do Python:
+
+Abra um terminal e execute os seguintes comandos:
+
+         sudo apt update
+         sudo apt install python3
+
+Isso garantirá que o Python 3 seja instalado em seu sistema.
+
+Instalação do pip:
+
+O pip é o gerenciador de pacotes Python. Você pode instalá-lo usando o apt:
+
+         sudo apt install python3-pip
+
+Instalação do Pillow:
+
+Agora, você pode usar o pip para instalar o Pillow:
+
+pip3 install Pillow
+
+Antes de executar o programa, certifique-se de que os arquivos estejam executáveis:
+
+        chmod +x dejavu.py dejavu-JPEG/dejavu dejavu-PNG/dejavu
+
+Isso garantirá que os binários do Dejavu e o script Python possam ser executados.
+
+Execução:
+
+Agora, você pode executar a interface gráfica:
+
+
+python3 dejavu.py
+
+
+Uma janela gráfica deve abrir, permitindo que você selecione as opções desejadas e execute a ferramenta Dejavu.
+
+Entendendo as Opções da Ferramenta:
+
+- Tipo de Arquivo (JPEG/PNG): Escolha o tipo de arquivo que você deseja recuperar.
+- Método de Extração (raw/histo):
+  - raw: Refere-se à extração direta dos dados brutos dos arquivos.
+  - histo: Os atributos de entrada dizem respeito ao histograma do cluster.
+  - NoFooter:
+  - Se marcado, a opção -nofooter é adicionada, controlando a inclusão ou exclusão de machine learning no reconhecimento de padrão dos rodapés nos resultados da análise.
+- Caminho do Dispositivo: Onde você especifica o dispositivo ou a partição a ser analisado. Por exemplo, /dev/sdb1 ou o caminho de uma imagem de disco, como img.dd.
+- Diretório de Saída: Onde os arquivos recuperados serão salvos.
+
+Clique no botão "Executar Dejavu Forensics".
+
+A ferramenta Dejavu será executada com as opções fornecidas e os resultados serão exibidos no terminal.
+
+Espero que este guia tenha esclarecido o processo de utilização da ferramenta Dejavu com a interface gráfica.
+
+  Contato:
+- iab@ecomp.poli.br
+- smll@ecomp.poli.br
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
